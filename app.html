@@ -85,6 +85,8 @@
     let list = document.getElementById('list');
     async function search() {
         let query = document.getElementById("bar").value;
+        if(query.length == 0)
+            return false;
         let res = await fetch(`https://swapi.dev/api/people/?search=${query}`);
         let data = await res.json();
         return data;
